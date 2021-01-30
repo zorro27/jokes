@@ -7,7 +7,7 @@
 
 import UIKit
 import WebKit
-
+let api = "http://www.icndb.com/api/"
 class URLViewController: UIViewController {
     
     @IBOutlet weak var webView: WKWebView!
@@ -19,8 +19,8 @@ class URLViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        webView.load(URLRequest(url: (URL(string: "http://www.icndb.com/api/")!)))
-    
-        }
+        webView.load(URLRequest(url: (URL(string: api)!)))
+        
     }
+}
 

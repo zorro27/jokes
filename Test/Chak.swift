@@ -7,13 +7,13 @@
 
 import Foundation
 
- class Chak {
+class Chak {
     var joke: String
     
     init? (data: Dictionary<String, Any>){
         guard let joke = data["joke"] as? String else {
-        return nil
-    }
+            return nil
+        }
         self.joke = joke
-}
+    }
 }

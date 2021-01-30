@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController{
     
     var funs: [Chak] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.isHidden = true
@@ -30,9 +30,9 @@ class ViewController: UIViewController{
         let loader = FunLoader()
         loader.delegate = self
         loader.loadFuns()
-        }
-    
     }
+    
+}
 
 extension ViewController: funLoaderDelegate{
     func loader(funs:[Chak]) {

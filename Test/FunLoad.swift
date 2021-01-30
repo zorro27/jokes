@@ -14,11 +14,10 @@ protocol funLoaderDelegate {
 let baseUrl = "http://api.icndb.com/jokes/random/"
 var newUrl = baseUrl
 
-  class FunLoader {
+class FunLoader {
     var delegate: funLoaderDelegate?
     
     func loadFuns(){
-        //let url  = URL(string: "http://api.icndb.com/jokes/random/3")!
         let url = URL(string: newUrl)!
         let request = URLRequest(url: url)
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -33,12 +32,12 @@ var newUrl = baseUrl
                     }
                 }
                 DispatchQueue.main.async{
-                self.delegate?.loader(funs: funs)
+                    self.delegate?.loader(funs: funs)
                 }
             }
-            }
-        task.resume()
         }
+        task.resume()
+    }
 }
 
 
